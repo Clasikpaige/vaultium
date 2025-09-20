@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card col-span-12">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+            <h2>Portfolio & Investments</h2>
+            <div class="muted small">Track investments, performance and allocations</div>
+        </div>
+        <div style="display:flex;gap:8px">
+            <button class="btn btn-ghost" id="add-asset">Add Asset</button>
+            <button class="btn btn-primary" id="rebalance">Rebalance</button>
+        </div>
+    </div>
+    <div style="margin-top:12px" class="portfolio-grid" id="portfolio-grid"></div>
+    <div style="margin-top:18px" class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+                <h3 style="margin:0">Performance</h3>
+                <div class="muted small">Simulated chart</div>
+            </div>
+            <div>
+                <div class="muted small">Total</div>
+                <div style="font-weight:800" id="portfolio-total">$0.00</div>
+            </div>
+        </div>
+        <div style="margin-top:12px" class="chart-wrap"><canvas id="port-chart"></canvas></div>
+    </div>
+</section>
+{% endblock %}
