@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="grid">
+    <section class="card col-span-8">
+        <div class="balance-row">
+            <div class="balance-left">
+                <h2>Wallet Summary</h2>
+                <div class="balance-big" id="balance-big">Loading...</div>
+                <div class="balance-sub muted">Total balance (display only). USD equivalent: <strong id="balance-usd">$0.00</strong></div>
+            </div>
+            <div style="text-align:right">
+                <div class="muted small">Net worth breakdown</div>
+                <div style="margin-top:8px">Loading...</div>
+            </div>
+        </div>
+        <hr style="border:none;border-top:1px solid var(--glass-border);margin:12px 0">
+        <div style="display:flex;gap:12px;align-items:center;justify-content:space-between">
+            <div style="flex:1">
+                <div class="muted small">Live rates</div>
+                <div class="rates-list" id="rates-list"></div>
+            </div>
+            <div style="width:320px">
+                <div class="muted small">Recent transactions</div>
+                <div style="margin-top:8px" id="dash-txs"></div>
+            </div>
+        </div>
+    </section>
+    <section class="card col-span-4">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+                <h3 style="margin:0">Portfolio</h3>
+                <div class="muted small">Overview & quick actions</div>
+            </div>
+            <div>
+                <button class="btn btn-ghost" id="quick-send">Send</button>
+            </div>
+        </div>
+        <div style="margin-top:12px" id="portfolio-mini"></div>
+        <div style="margin-top:12px;display:flex;gap:8px">
+            <button class="btn btn-primary" id="open-portfolio">Open Portfolio</button>
+            <button class="btn btn-ghost" id="open-smart">Manage Contracts</button>
+        </div>
+    </section>
+</section>
+{% endblock %}
