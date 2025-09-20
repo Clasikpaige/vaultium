@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card col-span-12">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+            <h2>Smart Contracts</h2>
+            <div class="muted small">Add contract addresses to watch token balances & events</div>
+        </div>
+        <div>
+            <button class="btn btn-primary" id="btn-add-contract">Add Contract</button>
+        </div>
+    </div>
+    <div style="margin-top:12px" id="contracts-list"></div>
+</section>
+{% endblock %}
