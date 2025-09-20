@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card col-span-8">
+    <h2>Send / Withdraw</h2>
+    <div class="muted small">Simulated UI — no keys used here</div>
+    <div style="margin-top:12px;display:grid;grid-template-columns:1fr 320px;gap:12px">
+        <div>
+            <label class="muted small">Network / Asset</label>
+            <select id="send-asset">
+                <option>BTC</option><option>ETH</option><option>BNB</option>
+            </select>
+            <div style="height:10px"></div>
+            <label class="muted small">Recipient address</label>
+            <input id="send-to" placeholder="0x... or btc addr" />
+            <div style="height:10px"></div>
+            <label class="muted small">Amount</label>
+            <input id="send-amount" placeholder="0.00" />
+            <div style="height:10px"></div>
+            <label class="muted small">Note (optional)</label>
+            <input id="send-note" placeholder="Reason for transfer" />
+            <div style="margin-top:12px;display:flex;gap:8px">
+                <button class="btn btn-primary" id="send-preview">Preview</button>
+                <button class="btn btn-ghost" id="send-cancel">Cancel</button>
+            </div>
+        </div>
+        <div style="border-left:1px solid var(--glass-border);padding-left:12px">
+            <div class="muted small">Preview</div>
+            <div style="margin-top:12px" id="send-preview-box">
+                <div class="muted small">No preview yet</div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
