@@ -3,61 +3,33 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Vaultium - Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Vaultium — Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/components.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 </head>
 <body>
-    <div class="login-container">
-        <div class="card">
-            <div class="brand">
-                <div class="logo">V</div>
-                <h1>Vaultium</h1>
-            </div>
-            <h2>Login</h2>
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="flash {{ category }}">{{ message }}</div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-            <form method="POST" action="{{ url_for('login') }}">
-                <div>
+    <div class="modal">
+        <div class="card" style="max-width:400px;">
+            <h2>Login to Vaultium</h2>
+            {% if error %}
+                <div class="red">{{ error }}</div>
+            {% endif %}
+            <form method="post">
+                <div style="margin-top:12px;">
                     <label class="muted small">Username</label>
-                    <input type="text" name="username" placeholder="Enter username (demo)" required>
+                    <input type="text" name="username" placeholder="Enter username" required>
                 </div>
-                <div style="margin-top:12px">
+                <div style="margin-top:12px;">
                     <label class="muted small">Password</label>
-                    <input type="password" name="password" placeholder="Enter password (password123)" required>
+                    <input type="password" name="password" placeholder="Enter password" required>
                 </div>
-                <div style="margin-top:12px">
+                <div style="margin-top:12px;display:flex;gap:8px;">
                     <button type="submit" class="btn btn-primary">Login</button>
                 </div>
             </form>
-            <div class="muted small" style="margin-top:12px">Demo credentials: username: demo, password: password123</div>
         </div>
     </div>
-
-    <style>
-        .login-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: linear-gradient(180deg, #071021 0%, #071225 40%, #061123 100%);
-        }
-        .card {
-            max-width: 400px;
-            width: 90%;
-        }
-        .flash {
-            padding: 10px;
-            border-radius: 8px;
-            margin-bottom: 12px;
-        }
-        .flash.success { background: var(--success); color: #fff; }
-        .flash.error { background: var(--danger); color: #fff; }
-    </style>
 </body>
 </html>
