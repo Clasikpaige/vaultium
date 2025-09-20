@@ -1,0 +1,27 @@
+.app {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    padding: 28px;
+    height: 100vh;
+    align-items: start;
+}
+
+.sidebar {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 20px;
+    height: calc(100vh - 56px);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: sticky;
+    top: 28px;
+}
+
+.main {
+    overflow: auto;
+    padding: 6px 6px 28px 6px;
+    height: calc(100vh - 56px);
+}
