@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card col-span-12">
+    <h2>Settings</h2>
+    <div class="muted small">Coming soon!.</div>
+    <div style="margin-top:12px;display:flex;gap:12px">
+        <div style="flex:1">
+            <div class="muted small">Appearance</div>
+            <div style="height:8px"></div>
+            <button class="btn btn-ghost" id="theme-toggle">Toggle Theme (demo)</button>
+        </div>
+        <div style="flex:1">
+            <div class="muted small">Integrations</div>
+            <div style="height:8px"></div>
+            <div style="display:flex;gap:8px">
+                <input id="coingecko" placeholder="CoinGecko API (optional)" />
+                <button class="btn btn-primary" id="save-int">Save</button>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
