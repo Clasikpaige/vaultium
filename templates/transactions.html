@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card col-span-12">
+    <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+            <h2 style="margin:0">Transactions</h2>
+            <div class="muted small">All activity across tracked chains</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+            <select id="tx-filter">
+                <option value="all">All</option>
+                <option value="confirmed">Confirmed</option>
+                <option value="pending">Pending</option>
+                <option value="failed">Failed</option>
+            </select>
+            <button class="btn btn-primary" id="btn-export">Export</button>
+        </div>
+    </div>
+    <div style="margin-top:12px;overflow:auto">
+        <table aria-label="Transactions table">
+            <thead><tr><th>Tx</th><th>Type</th><th>Coin</th><th>Amount</th><th>Time</th><th>Status</th></tr></thead>
+            <tbody id="tx-table-body"></tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}
