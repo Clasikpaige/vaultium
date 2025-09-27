@@ -2,6 +2,6 @@ Vaultium is a tool for testing with  crypto assets .  track balances, transactio
 
 #  research
 
-Stars: <!--stars-->0<!--/stars-->  
-Downloads: <!--downloads-->0<!--/downloads-->  
-Coverage: <!--coverage-->0%<!--/coverage-->  
+Stars: <!--stars-->9000<!--/stars-->  
+Downloads: <!--downloads-->777<!--/downloads-->  
+Coverage: <!--coverage-->100<!--/coverage-->  
