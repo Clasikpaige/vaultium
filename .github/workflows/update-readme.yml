@@ -1,0 +1,36 @@
+name: Update README badges (demo)
+
+on:
+  workflow_dispatch:
+    inputs:
+      stars:
+        description: "Fake star count"
+        required: true
+        default: "1234"
+      downloads:
+        description: "Fake download count"
+        required: true
+        default: "42"
+      coverage:
+        description: "Fake coverage percent"
+        required: true
+        default: "98"
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update README with fake numbers
+        run: |
+          sed -i "s/<!--stars-->.*<!--\/stars-->/<!--stars-->${{ github.event.inputs.stars }}<!--\/stars-->/" README.md
+          sed -i "s/<!--downloads-->.*<!--\/downloads-->/<!--downloads-->${{ github.event.inputs.downloads }}<!--\/downloads-->/" README.md
+          sed -i "s/<!--coverage-->.*<!--\/coverage-->/<!--coverage-->${{ github.event.inputs.coverage }}<!--\/coverage-->/" README.md
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update README with demo stats"
+          git push
